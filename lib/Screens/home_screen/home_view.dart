@@ -1,4 +1,7 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:shopping_store/Screens/Category_screen/category.dart';
+import 'package:shopping_store/Screens/Favourite_screen/favourite_screen.dart';
 import 'package:shopping_store/Screens/home_screen/widgets/GridItem.dart';
 
 class HomeView extends StatefulWidget {
@@ -123,14 +126,16 @@ class _HomeViewState extends State<HomeView> {
                     child: Text(
                       "Flat 50% Off",
                       style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          color: Colors.white),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color.fromARGB(255, 229, 189, 14)),
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 229, 189, 14),
+                  ),
                 ),
                 Container(
                   margin: EdgeInsets.all(20),
@@ -140,15 +145,17 @@ class _HomeViewState extends State<HomeView> {
                     child: Text(
                       "Dont Miss Out!",
                       style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                          color: Colors.white),
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Color.fromARGB(255, 250, 145, 47)),
-                )
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 250, 145, 47),
+                  ),
+                ),
               ],
             ),
           ),

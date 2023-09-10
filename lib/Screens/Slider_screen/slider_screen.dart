@@ -3,6 +3,8 @@ import 'package:shopping_store/Screens/Slider_screen/widgets/pageView.dart';
 import 'package:shopping_store/Screens/home_screen/home_view.dart';
 import 'package:shopping_store/constants/app_colors.dart';
 
+import '../../Widgets/bottomNavigation.dart';
+
 class SliderScreen extends StatefulWidget {
   const SliderScreen({super.key});
 
@@ -17,6 +19,8 @@ class _SliderScreenState extends State<SliderScreen> {
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) => HomeView()),
         (Route<dynamic> route) => false);
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => BottomNavigation()));
   }
 
   int currentPage = 0;
