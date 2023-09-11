@@ -26,7 +26,6 @@ class _GridItemState extends State<GridItem> {
           crossAxisCount: 2,
           mainAxisSpacing: 5,
           crossAxisSpacing: 5,
-          childAspectRatio: 1,
         ),
         itemBuilder: (context, index) {
           return InkWell(

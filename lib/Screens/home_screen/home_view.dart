@@ -160,11 +160,14 @@ class _HomeViewState extends State<HomeView> {
             ),
           ),
           SizedBox(
-            height: 15,
+            height: 3,
           ),
-          Text(
-            "Recommended",
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+          Container(
+            margin: EdgeInsets.only(bottom: 10),
+            child: Text(
+              "Recommended",
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
+            ),
           ),
           Expanded(
             child: GridItem(),
