@@ -8,9 +8,7 @@ class Category_Screen extends StatefulWidget {
 }
 
 class _Category_ScreenState extends State<Category_Screen> {
-  List Category_items = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSPCzcQup2wSgAAUqBGOZdQAUmf79S4IElmQ&usqp=CAU"
-  ];
+  List Category_items = ["assets/images/t-shirt.png"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -132,8 +130,8 @@ class _Category_ScreenState extends State<Category_Screen> {
                             padding: EdgeInsets.all(10),
                             child: Image.asset(
                               "${Category_items[index]}",
-                              height: 30,
-                              width: 30,
+                              height: 60,
+                              width: 60,
                             ),
                           )
                         ],
