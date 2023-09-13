@@ -9,6 +9,7 @@ class Category_Screen extends StatefulWidget {
 
 class _Category_ScreenState extends State<Category_Screen> {
   List Category_items = ["assets/images/t-shirt.png"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -110,7 +111,7 @@ class _Category_ScreenState extends State<Category_Screen> {
                       padding: EdgeInsets.all(12),
                       child: Column(
                         children: [
-                          const Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
@@ -120,7 +121,14 @@ class _Category_ScreenState extends State<Category_Screen> {
                                   fontSize: 15,
                                 ),
                               ),
-                              Icon(Icons.favorite, color: Colors.redAccent),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    print("hello");
+                                  },
+                                  child: Icon(
+                                    Icons.favorite_border_outlined,
+                                    color: Colors.redAccent,
+                                  ))
                             ],
                           ),
                           SizedBox(
