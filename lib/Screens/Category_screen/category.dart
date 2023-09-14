@@ -108,40 +108,61 @@ class _Category_ScreenState extends State<Category_Screen> {
                       ],
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: EdgeInsets.all(2),
                       child: Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                "30% Off",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 15,
+                              // ElevatedButton(
+                              //     onPressed: () {
+                              //       print("hello");
+                              //     },
+                              // child:
+                              IconButton(
+                                onPressed: () {
+                                  print("hello");
+                                },
+                                icon: Icon(
+                                  Icons.favorite_border_outlined,
+                                  color: Colors.black,
                                 ),
                               ),
-                              ElevatedButton(
-                                  onPressed: () {
-                                    print("hello");
-                                  },
-                                  child: Icon(
-                                    Icons.favorite_border_outlined,
-                                    color: Colors.redAccent,
-                                  ))
                             ],
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 2,
                           ),
-                          Padding(
-                            padding: EdgeInsets.all(10),
+                          // Padding(
+                          //   // padding: EdgeInsets.all(10),
+                          // child:
+                          Container(
                             child: Image.asset(
                               "${Category_items[index]}",
                               height: 60,
                               width: 60,
                             ),
-                          )
+                            // margin: EdgeInsets.only(bottom: 60),
+                          ),
+                          Container(
+                            child: Text(
+                              "tshirts",
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w700),
+                            ),
+                            margin: EdgeInsets.only(top: 10),
+                          ),
+
+                          // Container(
+                          //   child: Text(
+                          //     "30% Off",
+                          //     style: TextStyle(
+                          //       fontWeight: FontWeight.w700,
+                          //       fontSize: 15,
+                          //     ),
+                          //   ),
+                          //   margin: EdgeInsets.only(bottom: 50),
+                          // ),
                         ],
                       ),
                     ),
