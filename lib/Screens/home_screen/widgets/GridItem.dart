@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class GridItem extends StatefulWidget {
   const GridItem({Key? key}) : super(key: key);
@@ -8,10 +9,14 @@ class GridItem extends StatefulWidget {
 }
 
 var cartImageList = [
-  "assets/images/cart1.jpg",
-  "assets/images/cart2.jpg",
-  "assets/images/cart3.jpg",
-  "assets/images/cart4.jpg",
+  "assets/images/pic.svg",
+  "assets/images/pic.svg",
+  "assets/images/pic.svg",
+  "assets/images/pic.svg",
+  "assets/images/pic.svg",
+  "assets/images/pic.svg",
+  // "assets/images/cart3.jpg",
+  // "assets/images/cart4.jpg",
 ];
 
 class _GridItemState extends State<GridItem> {
@@ -65,10 +70,10 @@ class _GridItemState extends State<GridItem> {
                     ),
                     Padding(
                       padding: EdgeInsets.all(10),
-                      child: Image.asset(
+                      child: SvgPicture.asset(
                         "${cartImageList[index]}",
-                        height: 80,
-                        width: 80,
+                        height: 60,
+                        width: 60,
                       ),
                     )
                   ],
