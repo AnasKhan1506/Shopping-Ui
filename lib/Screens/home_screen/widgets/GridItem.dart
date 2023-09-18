@@ -15,8 +15,16 @@ var cartImageList = [
   "assets/images/pic.svg",
   "assets/images/pic.svg",
   "assets/images/pic.svg",
-  // "assets/images/cart3.jpg",
-  // "assets/images/cart4.jpg",
+//   "assets/images/cart3.jpg",
+//   "assets/images/cart4.jpg",
+];
+List<String> itemName = [
+  "Polo Tshirt",
+  " Baggy Jeans",
+  "Chinos",
+  " Sneakers",
+  "Jordan",
+  " Shirt"
 ];
 
 class _GridItemState extends State<GridItem> {
@@ -49,10 +57,10 @@ class _GridItemState extends State<GridItem> {
                 ],
               ),
               child: Padding(
-                padding: EdgeInsets.all(12),
+                padding: EdgeInsets.all(5),
                 child: Column(
                   children: [
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -62,20 +70,37 @@ class _GridItemState extends State<GridItem> {
                             fontSize: 15,
                           ),
                         ),
-                        Icon(Icons.favorite, color: Colors.redAccent),
+                        IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.favorite_border_outlined))
                       ],
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                      child: SvgPicture.asset(
-                        "${cartImageList[index]}",
-                        height: 60,
-                        width: 60,
-                      ),
-                    )
+                    Stack(
+                      children: [
+                        Container(
+                          child: Padding(
+                            padding: EdgeInsets.only(bottom: 40, left: 30),
+                            child: SvgPicture.asset(
+                              "${cartImageList[index]}",
+                              height: 60,
+                              width: 60,
+                            ),
+                          ),
+                          // padding: EdgeInsets.only(bottom: 40),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 55, top: 65),
+                          child: Text(
+                            itemName[index],
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w700),
+                          ),
+                        )
+                      ],
+                    ),
                   ],
                 ),
               ),
