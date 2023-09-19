@@ -26,6 +26,7 @@ List<String> itemName = [
   "Jordan",
   " Shirt"
 ];
+var itemPrice = [" \$20", "\$30", "\$35", "\$70", "\$50", "\$25"];
 
 class _GridItemState extends State<GridItem> {
   @override
@@ -36,6 +37,7 @@ class _GridItemState extends State<GridItem> {
         physics: NeverScrollableScrollPhysics(),
         itemCount: cartImageList.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.95,
           crossAxisCount: 2,
           mainAxisSpacing: 5,
           crossAxisSpacing: 5,
@@ -96,9 +98,56 @@ class _GridItemState extends State<GridItem> {
                           child: Text(
                             itemName[index],
                             style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w700),
+                                fontSize: 12, fontWeight: FontWeight.w700),
                           ),
-                        )
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 88),
+                          height: 20,
+                          width: 120,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.white),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 20),
+                                child: Text(
+                                  "Unit",
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 5),
+                                child: Text(
+                                  itemPrice[index],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 68, left: 75),
+                          child: TextButton(
+                            onPressed: () {
+                              print("hi");
+                            },
+                            child: CircleAvatar(
+                              radius: 15,
+                              backgroundColor: Colors.black,
+                              child: Text(
+                                "+",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ],

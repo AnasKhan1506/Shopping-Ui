@@ -8,7 +8,18 @@ class Category_Screen extends StatefulWidget {
 }
 
 class _Category_ScreenState extends State<Category_Screen> {
-  List Category_items = ["assets/images/t-shirt.png"];
+  List Category_items = [
+    "assets/images/t-shirt.png",
+    "assets/images/shirt.png",
+    "assets/images/sneakers.png",
+    "assets/images/trousers.png"
+  ];
+  List<String> Category_titles = [
+    "T-Shirts",
+    "Shirts",
+    "Sneakers",
+    "Jeans",
+  ];
 
   @override
   Widget build(BuildContext context) {
