@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_store/Screens/Category_screen/tshirt_category.dart';
 
 class Category_Screen extends StatefulWidget {
   const Category_Screen({super.key});
@@ -98,7 +99,12 @@ class _Category_ScreenState extends State<Category_Screen> {
             ),
             itemBuilder: (context, index) {
               return InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TshirtCategory()),
+                  );
+                },
                 child: Container(
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
