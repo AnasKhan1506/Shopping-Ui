@@ -5,12 +5,14 @@ class ItemCart extends StatefulWidget {
   final List<String> cartImageList;
   final List<String> itemPriceList;
   final List<String> itemName;
+  final int index;
 
   const ItemCart({
     Key? key,
     required this.cartImageList,
     required this.itemPriceList,
     required this.itemName,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -73,7 +75,7 @@ class _ItemCartState extends State<ItemCart> {
                   Padding(
                     padding: const EdgeInsets.only(right: 55, top: 65),
                     child: Text(
-                      "${widget.itemName[0]}", // Replace with your item name
+                      "${widget.itemName[widget.index]}", // Replace with your item name
                       style:
                           TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
                     ),
@@ -100,7 +102,7 @@ class _ItemCartState extends State<ItemCart> {
                         Padding(
                           padding: EdgeInsets.only(left: 5),
                           child: Text(
-                            "${widget.itemPriceList[0]}", // Use widget.itemPriceList[0] or iterate through the list
+                            "${widget.itemPriceList[widget.index]}", // Use widget.itemPriceList[0] or iterate through the list
                           ),
                         ),
                       ],

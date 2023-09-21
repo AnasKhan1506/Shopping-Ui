@@ -49,9 +49,11 @@ class _TshirtCategoryState extends State<TshirtCategory> {
             ),
             itemBuilder: (context, index) {
               return ItemCart(
-                  cartImageList: cartImageList,
-                  itemPriceList: itemPriceList,
-                  itemName: itemName);
+                cartImageList: cartImageList,
+                itemPriceList: itemPriceList,
+                itemName: itemName,
+                index: index,
+              );
             }),
       ),
     );
