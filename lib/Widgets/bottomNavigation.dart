@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../Screens/Category_screen/category.dart';
+import '../Screens/Category_screen/tshirt_category.dart';
 import '../Screens/Favourite_screen/favourite_screen.dart';
 import '../Screens/home_screen/home_view.dart';
 

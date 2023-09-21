@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_store/Screens/Category_screen/shirt_category.dart';
 import 'package:shopping_store/Screens/Category_screen/tshirt_category.dart';
 
 class Category_Screen extends StatefulWidget {
@@ -20,6 +21,10 @@ class _Category_ScreenState extends State<Category_Screen> {
     "Shirts",
     "Sneakers",
     "Jeans",
+  ];
+  var cartCategory = [
+    TshirtCategory(),
+    ShirtCategory(),
   ];
 
   @override
@@ -102,7 +107,8 @@ class _Category_ScreenState extends State<Category_Screen> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TshirtCategory()),
+                    MaterialPageRoute(
+                        builder: (context) => cartCategory[index]),
                   );
                 },
                 child: Container(
@@ -163,7 +169,7 @@ class _Category_ScreenState extends State<Category_Screen> {
                           ),
                           Container(
                             child: Text(
-                              "tshirts",
+                              "${Category_titles[index]}",
                               style: TextStyle(
                                   fontSize: 15, fontWeight: FontWeight.w700),
                             ),
