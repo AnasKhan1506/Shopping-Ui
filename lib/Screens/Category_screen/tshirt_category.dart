@@ -36,25 +36,36 @@ class _TshirtCategoryState extends State<TshirtCategory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: GridView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: cartImageList.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              childAspectRatio: 0.95,
-              crossAxisCount: 2,
-              mainAxisSpacing: 5,
-              crossAxisSpacing: 5,
-            ),
-            itemBuilder: (context, index) {
-              return ItemCart(
-                cartImageList: cartImageList,
-                itemPriceList: itemPriceList,
-                itemName: itemName,
-                index: index,
-              );
-            }),
+      body: ListView(
+        children: [
+          Column(
+            children: [
+              Container(
+                height: 300,
+                width: double.infinity,
+                color: const Color.fromARGB(255, 218, 217, 217),
+              ),
+              GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: cartImageList.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    childAspectRatio: 0.95,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 5,
+                    crossAxisSpacing: 5,
+                  ),
+                  itemBuilder: (context, index) {
+                    return ItemCart(
+                      cartImageList: cartImageList,
+                      itemPriceList: itemPriceList,
+                      itemName: itemName,
+                      index: index,
+                    );
+                  }),
+            ],
+          ),
+        ],
       ),
     );
   }
