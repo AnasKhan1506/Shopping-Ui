@@ -33,37 +33,52 @@ class _TshirtCategoryState extends State<TshirtCategory> {
     "\$300",
     "\$900"
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
+      body: Column(
         children: [
-          Column(
-            children: [
-              Container(
-                height: 300,
-                width: double.infinity,
-                color: const Color.fromARGB(255, 218, 217, 217),
+          // Add a container above the GridView
+          Container(
+            margin: EdgeInsets.all(50),
+            height: 500.0, // Adjust the height as needed
+            color: Colors.blue, // Set a background color for the container
+            // Add any content you want within this container
+            child: Center(
+              child: Text(
+                "Your Container Content",
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
               ),
-              GridView.builder(
-                  shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: cartImageList.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 0.95,
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 5,
-                    crossAxisSpacing: 5,
-                  ),
-                  itemBuilder: (context, index) {
-                    return ItemCart(
-                      cartImageList: cartImageList,
-                      itemPriceList: itemPriceList,
-                      itemName: itemName,
-                      index: index,
-                    );
-                  }),
-            ],
+            ),
+          ),
+          // Add a scrollable GridView
+          Expanded(
+            child: SingleChildScrollView(
+              child: GridView.builder(
+                shrinkWrap: true,
+                physics:
+                    BouncingScrollPhysics(), // Use BouncingScrollPhysics for a bounce effect
+                itemCount: cartImageList.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 0.95,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 5,
+                  crossAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) {
+                  return ItemCart(
+                    cartImageList: cartImageList,
+                    itemPriceList: itemPriceList,
+                    itemName: itemName,
+                    index: index,
+                  );
+                },
+              ),
+            ),
           ),
         ],
       ),
