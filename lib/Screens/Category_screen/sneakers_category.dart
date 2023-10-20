@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_store/Screens/Slider_screen/widgets/item_Cart.dart';
 
-import '../Slider_screen/widgets/item_Cart.dart';
-
-class ShirtCategory extends StatefulWidget {
-  const ShirtCategory({super.key});
+class SneakerCategory extends StatefulWidget {
+  const SneakerCategory({super.key});
 
   @override
-  State<ShirtCategory> createState() => _ShirtCategoryState();
+  State<SneakerCategory> createState() => _SneakerCategoryState();
 }
 
-class _ShirtCategoryState extends State<ShirtCategory> {
+class _SneakerCategoryState extends State<SneakerCategory> {
   List<String> cartImageList = [
     "assets/images/pic.svg",
     "assets/images/pic.svg",
@@ -19,11 +18,11 @@ class _ShirtCategoryState extends State<ShirtCategory> {
     "assets/images/pic.svg",
   ];
   List<String> itemName = [
-    "Full sleeves",
-    "Check",
-    "Casual",
-    "Formal",
-    "Stripe",
+    "Polo",
+    "V-Neck",
+    "Henley",
+    "Striped",
+    "Solid",
     "Hooded"
   ];
   List<String> itemPriceList = [
@@ -34,6 +33,7 @@ class _ShirtCategoryState extends State<ShirtCategory> {
     "\$300",
     "\$900"
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +51,7 @@ class _ShirtCategoryState extends State<ShirtCategory> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "SHIRTS",
+                    "TSHIRTS",
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
@@ -70,26 +70,29 @@ class _ShirtCategoryState extends State<ShirtCategory> {
               ),
             ),
           ),
+          // Add a scrollable GridView
           Expanded(
             child: SingleChildScrollView(
               child: GridView.builder(
-                  shrinkWrap: true,
-                  physics: BouncingScrollPhysics(),
-                  itemCount: cartImageList.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    childAspectRatio: 0.95,
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 5,
-                    crossAxisSpacing: 5,
-                  ),
-                  itemBuilder: (context, index) {
-                    return ItemCart(
-                      cartImageList: cartImageList,
-                      itemPriceList: itemPriceList,
-                      itemName: itemName,
-                      index: index,
-                    );
-                  }),
+                shrinkWrap: true,
+                physics:
+                    BouncingScrollPhysics(), // Use BouncingScrollPhysics for a bounce effect
+                itemCount: cartImageList.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  childAspectRatio: 0.95,
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 5,
+                  crossAxisSpacing: 5,
+                ),
+                itemBuilder: (context, index) {
+                  return ItemCart(
+                    cartImageList: cartImageList,
+                    itemPriceList: itemPriceList,
+                    itemName: itemName,
+                    index: index,
+                  );
+                },
+              ),
             ),
           ),
         ],
