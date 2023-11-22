@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_store/Screens/Category_screen/jeans_category.dart';
 import 'package:shopping_store/Screens/Category_screen/shirt_category.dart';
+import 'package:shopping_store/Screens/Category_screen/sneakers_category.dart';
 import 'package:shopping_store/Screens/Category_screen/tshirt_category.dart';
 
 class Category_Screen extends StatefulWidget {
@@ -25,6 +27,8 @@ class _Category_ScreenState extends State<Category_Screen> {
   var cartCategory = [
     TshirtCategory(),
     ShirtCategory(),
+    SneakerCategory(),
+    JeansCategory(),
   ];
 
   @override

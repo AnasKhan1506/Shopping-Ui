@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_store/Screens/Slider_screen/widgets/item_Cart.dart';
 
-class SneakerCategory extends StatefulWidget {
-  const SneakerCategory({super.key});
+class JeansCategory extends StatefulWidget {
+  const JeansCategory({super.key});
 
   @override
-  State<SneakerCategory> createState() => _SneakerCategoryState();
+  State<JeansCategory> createState() => _JeansCategoryState();
 }
 
-class _SneakerCategoryState extends State<SneakerCategory> {
+class _JeansCategoryState extends State<JeansCategory> {
   List<String> cartImageList = [
     "assets/images/pic.svg",
     "assets/images/pic.svg",
@@ -18,12 +18,12 @@ class _SneakerCategoryState extends State<SneakerCategory> {
     "assets/images/pic.svg",
   ];
   List<String> itemName = [
-    "Nike",
-    "Adidas",
-    "Jordan",
-    "Skate",
-    "Vans",
-    "Converse"
+    "Jeans",
+    "Cargo",
+    "Check",
+    "Chinos",
+    "Cotton",
+    "formal"
   ];
   List<String> itemPriceList = [
     "\$900",
@@ -51,7 +51,7 @@ class _SneakerCategoryState extends State<SneakerCategory> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "SNEAKERS",
+                    "JEANS",
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
